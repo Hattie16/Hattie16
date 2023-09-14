@@ -1,0 +1,25 @@
+
+
+Console.WriteLine("How old are you?");
+
+string input = Console.ReadLine();
+
+Console.WriteLine($"You are {input} years old!");
+
+///
+
+string firstname = "Tommy";
+int age = 16;
+Console.WriteLine(firstname + " you are " + age + " years old!");
+
+///
+
+string? Age;
+string? FirstName;
+
+Console.WriteLine("Enter your name:");
+FirstName = Console.ReadLine();
+Console.WriteLine("Enter your age:");
+Age = Console.ReadLine();
+
+Console.WriteLine($"Your name is: \"{FirstName}\", you are {Age} years old");
