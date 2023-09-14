@@ -17,9 +17,17 @@ Console.WriteLine(firstname + " you are " + age + " years old!");
 string? Age;
 string? FirstName;
 
-Console.WriteLine("Enter your name:");
+Console.WriteLine("Hello");
+
+Console.WriteLine("First of all please enter your name:");
 FirstName = Console.ReadLine();
-Console.WriteLine("Enter your age:");
+Console.WriteLine("Next, please enter your age:");
 Age = Console.ReadLine();
 
-Console.WriteLine($"Your name is: \"{FirstName}\", you are {Age} years old");
+
+string? Place;
+Console.WriteLine("Where do you live?");
+Place = Console.ReadLine();
+Console.WriteLine("Your name is " + FirstName + ", you are " + Age + " years old, and you live in " + Place +"!");
+
+///
