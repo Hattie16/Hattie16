@@ -14,20 +14,24 @@ Console.WriteLine(firstname + " you are " + age + " years old!");
 
 ///
 
+
 string? Age;
 string? FirstName;
+string? LastName;
+string? Place;
+
 
 Console.WriteLine("Hello");
-
 Console.WriteLine("First of all please enter your name:");
 FirstName = Console.ReadLine();
+Console.WriteLine("What is your surname: ");
+LastName = Console.ReadLine();
 Console.WriteLine("Next, please enter your age:");
 Age = Console.ReadLine();
-
-
-string? Place;
 Console.WriteLine("Where do you live?");
 Place = Console.ReadLine();
-Console.WriteLine("Your name is " + FirstName + ", you are " + Age + " years old, and you live in " + Place +"!");
+
+
+Console.WriteLine("Your name is " + FirstName + " " + LastName + ", you are " + Age + " years old, and you live in " + Place +"!");
 
 ///
