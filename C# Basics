@@ -34,7 +34,7 @@ Console.WriteLine("Where do you live?");
 Place = Console.ReadLine();
 
 
-Console.WriteLine("Your name is " + FirstName + " " + LastName + ", you are " + Age + " years old, and you live in " + Place +"!");
+Console.WriteLine("Hello, " + FirstName + " " +MiddleName + " " + LastName + ", you are " + Age + " years old, and you live in " + Place +"! Have a lovely day.");
 
 ///
 
