@@ -19,11 +19,13 @@ string? Age;
 string? FirstName;
 string? LastName;
 string? Place;
-
+string? MiddleName;
 
 Console.WriteLine("Hello");
 Console.WriteLine("First of all please enter your name:");
 FirstName = Console.ReadLine();
+Console.WriteLine("Please enter your middle name");
+MiddleName = Console.ReadLine();
 Console.WriteLine("What is your surname: ");
 LastName = Console.ReadLine();
 Console.WriteLine("Next, please enter your age:");
