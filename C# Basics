@@ -78,3 +78,21 @@ Console.ReadLine();
 ///
 
 
+string? X;
+string? Y;
+Console.WriteLine("Please enter a value for X");
+X = Console.ReadLine();
+Console.WriteLine("Please enter a value for Y");
+Y = Console.ReadLine();
+if (X == Y)
+{
+    Console.WriteLine("x is equal to y");
+}
+else
+{
+    Console.WriteLine("x is not equal to y");
+}
+
+
+///
+
