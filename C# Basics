@@ -67,3 +67,14 @@ Console.WriteLine(NAME + " Likes " + Film + " because " + Reason);
 
 
 ///
+
+
+DateTime dat = DateTime.Now;
+Console.WriteLine("The time: {0:d} at {0:t}", dat);
+Console.WriteLine("Press <Enter> to exit ");
+Console.ReadLine();
+
+
+///
+
+
