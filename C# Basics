@@ -53,3 +53,17 @@ Console.WriteLine(Convert.ToString(myBool));   // convert bool to string
 ///
 
 
+string? NAME;
+string? Film;
+string? Reason;
+Console.WriteLine("Hello");
+Console.WriteLine("Please enter you name.");
+NAME = Console.ReadLine();
+Console.WriteLine("Please enter your favourite film: ");
+Film = Console.ReadLine();
+Console.WriteLine("Please explain why: ");
+Reason = Console.ReadLine();
+Console.WriteLine(NAME + " Likes " + Film + " because " + Reason);
+
+
+///
