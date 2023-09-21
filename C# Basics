@@ -111,3 +111,17 @@ Console.WriteLine("You have said that Jupiter orbits the sun in " + intJup + " d
 ///
 
 
+//arrays
+
+string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+Console.WriteLine(cars[1]);
+Console.WriteLine(nums[3]);
+cars[0] = "Opel";
+Console.WriteLine(cars[0]);
+Console.WriteLine("There are " + nums.Length + " in the array");
+Console.WriteLine("There are " + cars.Length + " in the array");
+
+
+///
+
