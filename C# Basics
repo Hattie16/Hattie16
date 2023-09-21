@@ -96,3 +96,18 @@ else
 
 ///
 
+
+
+int intSun;
+Console.WriteLine("Input the distance in miles to the sun: ");
+intSun = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("You have said that the sun is " + intSun + " miles away.");
+int intJup;
+Console.WriteLine("How many days does it take for Jupiter to orbit the sun: ");
+intJup = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("You have said that Jupiter orbits the sun in " + intJup + " days.");
+
+
+///
+
+
