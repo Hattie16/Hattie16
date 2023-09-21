@@ -23,14 +23,20 @@ long longAC;
 Console.WriteLine("How many miles away is the Alpha Centauri from the Earth: ");
 longAC = Convert.ToInt64(Console.ReadLine());
 Console.WriteLine("You have said that Alpha Centauri is " + longAC + " miles from the Earth.");
+long longBD;
+Console.WriteLine("How many miles away is the Big Dipper from the Earth: ");
+longBD = Convert.ToInt64(Console.ReadLine());
+Console.WriteLine("You have said that the Big Dipper is " + longBD + " miles from the Earth.");
+string ans;
+Console.WriteLine("Who wrote Dracula? ");
+ans = Console.ReadLine();
+Console.WriteLine("You said "+ans+" wrote 'Dracula");
 Console.WriteLine(" ");
 
 DateTime Dat = DateTime.Now;
 Console.WriteLine("The time: {0:d} at {0:t}", Dat);
 Console.WriteLine("Press <Enter> to exit ");
 Console.ReadLine();
-
-
 
 
 //arrays
