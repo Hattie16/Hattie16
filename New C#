@@ -23,6 +23,7 @@ long longAC;
 Console.WriteLine("How many miles away is the Alpha Centauri from the Earth: ");
 longAC = Convert.ToInt64(Console.ReadLine());
 Console.WriteLine("You have said that Alpha Centauri is " + longAC + " miles from the Earth.");
+Console.WriteLine(" ");
 
 DateTime Dat = DateTime.Now;
 Console.WriteLine("The time: {0:d} at {0:t}", Dat);
