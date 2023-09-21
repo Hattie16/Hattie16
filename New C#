@@ -1,0 +1,30 @@
+DateTime dat = DateTime.Now;
+Console.WriteLine("The time: {0:d} at {0:t}", dat);
+Console.WriteLine("Press <Enter> to exit ");
+Console.ReadLine();
+
+int intSun;
+Console.WriteLine("Input the distance in miles to the sun: ");
+intSun = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("You have said that the sun is " + intSun + " miles away.");
+int intJup;
+Console.WriteLine("How many days does it take for Jupiter to orbit the sun: ");
+intJup = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("You have said that Jupiter orbits the sun in " + intJup + " days.");
+int intTempJup;
+Console.WriteLine("Input the surface temperature of Jupiter: ");
+intTempJup = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("You have said the suface temperature of Jupiter is " + intTempJup + " degrees celcius.");
+int intWords;
+Console.WriteLine("How many words are there in the english dialect: ");
+intWords  = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("You have said there are " + intWords + " in the English Dialect.");
+long longAC;
+Console.WriteLine("How many miles away is the Alpha Centauri from the Earth: ");
+longAC = Convert.ToInt64(Console.ReadLine());
+Console.WriteLine("You have said that Alpha Centauri is " + longAC + " miles from the Earth.");
+
+DateTime Dat = DateTime.Now;
+Console.WriteLine("The time: {0:d} at {0:t}", Dat);
+Console.WriteLine("Press <Enter> to exit ");
+Console.ReadLine();
