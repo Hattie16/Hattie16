@@ -1,0 +1,86 @@
+DateTime dat = DateTime.Now;
+Console.WriteLine("The time: {0:d} at {0:t}", dat);
+Console.WriteLine("Press <Enter> to exit ");
+Console.ReadLine();
+
+{
+    int score = 0;
+
+    Console.WriteLine("Welcome to the Word Trivia Game!");
+    Console.WriteLine("Answer the following questions.");
+
+    // Question 1
+    Console.WriteLine("\nQuestion 1: What is the capital of France?");
+    string answer1 = Console.ReadLine();
+    if (answer1.ToLower() == "paris")
+    {
+        Console.WriteLine("Correct!");
+        score++;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect. The correct answer is Paris.");
+    }
+
+    // Question 2
+    Console.WriteLine("\nQuestion 2: What is the largest planet in our solar system?");
+    string answer2 = Console.ReadLine();
+    if (answer2.ToLower() == "jupiter")
+    {
+        Console.WriteLine("Correct!");
+        score++;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect. The correct answer is Jupiter.");
+    }
+
+    // Question 3
+    Console.WriteLine("\nQuestion 3: Who wrote Dracula? ");
+    string answer3 = Console.ReadLine();
+    if (answer3.ToLower()== "mary shelley")
+    {
+        Console.WriteLine("Correct!");
+        score++;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect, the correct answer is Mary Shelley.");
+    }
+
+    // Question 4
+    Console.WriteLine("\nQuestion 4: What is the rarest M&M colour? ");
+    string answer4 = Console.ReadLine();
+    if (answer4.ToLower()== "brown")
+    {
+        Console.WriteLine("Correct!");
+        score++;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect the answer is brown.");
+    }
+
+    // Question 5
+    Console.WriteLine("\nQuestion 5: How many Celtic languages are spoken today?");
+    string answer5 = Console.ReadLine();
+    if (answer5.ToLower()== "six")
+    {
+        Console.WriteLine("Correct!");
+        score++;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect, the answer is six.");
+    }
+
+
+    Console.WriteLine($"\nYour score is: {score} out of 5"); 
+
+    Console.WriteLine("\nThank you for playing the Word Trivia Game!");
+}
+
+DateTime Dat = DateTime.Now;
+Console.WriteLine("The time: {0:d} at {0:t}", Dat);
+Console.WriteLine("Press <Enter> to exit ");
+Console.ReadLine();
