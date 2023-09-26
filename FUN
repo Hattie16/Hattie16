@@ -1,0 +1,35 @@
+long num1;
+Console.WriteLine("Input a value for x please: ");
+num1=Convert.ToInt64(Console.ReadLine());
+long num2;
+Console.WriteLine("Input a value for y please: ");
+num2= Convert.ToInt64(Console.ReadLine());
+long ans1 = num1 + num2;
+long ans2 = num1 * num2;
+double ans3 = num1 / num2;
+long ans4 = num1 - num2;
+Console.WriteLine(ans1 + " , " + ans2 + " , " + ans3 + " , " + ans4);
+
+///
+
+long Far;
+Console.WriteLine("Input a farenheit value please: ");
+Far = Convert.ToInt64(Console.ReadLine());
+double cel1 = Far - 32;
+double cel2 = cel1 * 5;
+double cel3 = cel2/9;
+Console.WriteLine(cel3);
+
+///
+
+long miles;
+long time;
+Console.WriteLine("Please enter how many miles you have travelled");
+miles = Convert.ToInt64(Console.ReadLine());
+Console.WriteLine("Please enter how long it took in minutes");
+time = Convert.ToInt64(Console.ReadLine());
+double speed1 = miles / time;
+double speed = speed1 * 60;
+Console.WriteLine(speed);
+
+///
