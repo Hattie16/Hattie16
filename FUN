@@ -22,14 +22,14 @@ Console.WriteLine(cel3);
 
 ///
 
-long miles;
+float miles;
 long time;
 Console.WriteLine("Please enter how many miles you have travelled");
 miles = Convert.ToInt64(Console.ReadLine());
 Console.WriteLine("Please enter how long it took in minutes");
 time = Convert.ToInt64(Console.ReadLine());
-double speed1 = miles / time;
-double speed = speed1 * 60;
+float speed1 = miles / time;
+float speed = speed1 * 60;
 Console.WriteLine(speed);
 
 ///
