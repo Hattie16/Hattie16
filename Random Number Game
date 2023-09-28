@@ -57,14 +57,17 @@ for (int tries = 1; tries <= maxTries; tries++)
         }
         else
         {
-            Console.WriteLine($"Congratulations! You guessed the number correctly in {tries} attempts! It was {seCretNumber}!");
+            Console.WriteLine($"Congratulations! You guessed the number correctly in {tries} attempts! It was {seCretNumber}! Well done!");
             return; // Exit the game
         }
     }
-    else
+    if (userGuess == 0)
     {
         Console.WriteLine("Invalid input. Please enter a valid number.");
+ 
+    }
+    if (tries == maxTries)
+    {
+        Console.WriteLine($"Sorry you hve run out of tries, the number was {seCretNumber}.");
     }
 }
-
-Console.WriteLine($"Sorry, you've run out of tries. The secret number was {seCretNumber}.");
