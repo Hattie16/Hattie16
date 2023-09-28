@@ -36,7 +36,7 @@ while (!hasGuessedCorrectly)
 
 //number guess with limited tries
 Random rAndom = new Random();
-int seCretNumber = random.Next(1, 101); // Generate a random number between 1 and 100
+int seCretNumber = rAndom.Next(1, 101); // Generate a random number between 1 and 100
 int maxTries = 10; // Number of tries they have
 
 Console.WriteLine("Welcome to the Number Guessing Game!");
@@ -57,7 +57,7 @@ for (int tries = 1; tries <= maxTries; tries++)
         }
         else
         {
-            Console.WriteLine($"Congratulations! You guessed the number ({seCretNumber}) correctly!");
+            Console.WriteLine($"Congratulations! You guessed the number correctly in {tries} attempts! It was {seCretNumber}!");
             return; // Exit the game
         }
     }
