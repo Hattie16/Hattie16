@@ -68,6 +68,6 @@ for (int tries = 1; tries <= maxTries; tries++)
     }
     if (tries == maxTries)
     {
-        Console.WriteLine($"Sorry you hve run out of tries, the number was {seCretNumber}.");
+        Console.WriteLine($"Sorry you have run out of tries, the number was {seCretNumber}.");
     }
 }
