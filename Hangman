@@ -1,8 +1,7 @@
-
-string[] words = { "programming", "hangman", "csharp", "developer", "openai" };
+string[] words = { "programming", "hangman", "csharp", "developer", "fun", "college", "coding", "executioner", "innocent", "abyss", "fizz", "motan", "dray", "pegasus", "pegasi" };
 Random random = new Random();
 string wordToGuess = words[random.Next(words.Length)];
-int attemptsRemaining = 6;
+int attemptsRemaining = 10;
 char[] guessedLetters = new char[wordToGuess.Length];
 bool gameOver = false;
 
