@@ -1,0 +1,41 @@
+Console.WriteLine("Think of a number between 1 and 100.");
+Console.WriteLine("I will try to guess it.");
+
+int min = 1;
+int max = 100;
+string userResponse;
+
+do
+{
+    int guess = (min + max) / 2;
+    Console.WriteLine($"Is your number {guess}? (yes/no)");
+    userResponse = Console.ReadLine();
+
+    if (userResponse.ToLower() == "yes")
+    {
+        Console.WriteLine("I guessed it! Thanks for playing.");
+    }
+    else if (userResponse.ToLower() == "no")
+    {
+        Console.WriteLine("Is your number higher or lower than my guess? (higher/lower)");
+        userResponse = Console.ReadLine();
+
+        if (userResponse.ToLower() == "higher")
+        {
+            min = guess + 1;
+        }
+        else if (userResponse.ToLower() == "lower")
+        {
+            max = guess - 1;
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter 'higher' or 'lower'.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Invalid input. Please enter 'yes' or 'no'.");
+    }
+} while (userResponse.ToLower() != "yes");
+ 
