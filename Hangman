@@ -1,0 +1,56 @@
+
+string[] words = { "programming", "hangman", "csharp", "developer", "openai" };
+Random random = new Random();
+string wordToGuess = words[random.Next(words.Length)];
+int attemptsRemaining = 6;
+char[] guessedLetters = new char[wordToGuess.Length];
+bool gameOver = false;
+
+// Initialize guessedLetters with underscores
+for (int i = 0; i < guessedLetters.Length; i++)
+{
+    guessedLetters[i] = '_';
+}
+
+Console.WriteLine("Welcome to Hangman!");
+
+while (!gameOver)
+{
+    Console.WriteLine($"Word to guess: {string.Join(" ", guessedLetters)}");
+    Console.WriteLine($"Attempts remaining: {attemptsRemaining}");
+
+    Console.Write("Guess a letter: ");
+    char guess = Char.ToLower(Console.ReadKey().KeyChar);
+    Console.WriteLine();
+
+    switch (wordToGuess.Contains(guess))
+    {
+        case true:
+            // Update guessedLetters with correctly guessed letters
+            for (int i = 0; i < wordToGuess.Length; i++)
+            {
+                if (wordToGuess[i] == guess)
+                {
+                    guessedLetters[i] = guess;
+                }
+            }
+            break;
+
+        case false:
+            Console.WriteLine("Incorrect guess!");
+            attemptsRemaining--;
+            break;
+    }
+
+    if (attemptsRemaining <= 0)
+    {
+        Console.WriteLine("You've run out of attempts! The word was: " + wordToGuess);
+        gameOver = true;
+    }
+
+    if (!guessedLetters.Contains('_'))
+    {
+        Console.WriteLine("Congratulations! You've guessed the word: " + wordToGuess);
+        gameOver = true;
+    }
+}
