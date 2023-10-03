@@ -1,0 +1,23 @@
+// Vowel or Not?
+{
+    Console.Write("Enter a single character: ");
+    char inputChar = Console.ReadKey().KeyChar;
+
+    if (IsVowel(inputChar))
+    {
+        Console.WriteLine(" is a vowel.");
+    }
+    else
+    {
+        Console.WriteLine(" is not a vowel.");
+    }
+}
+
+static bool IsVowel(char c)
+{
+    // Convert the character to lowercase for case-insensitive check
+    char lowerChar = char.ToLower(c);
+
+    // Check if the character is a vowel (a, e, i, o, u)
+    return lowerChar == 'a' || lowerChar == 'e' || lowerChar == 'i' || lowerChar == 'o' || lowerChar == 'u';
+}
