@@ -1,32 +1,37 @@
 //C# Streamwriter
-
-// File name  
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.IO;*/
 
-string fileName = @"C:\Temp\CSharpAuthors.txt";
-FileStream stream = null;
-try
+namespace StreamReadWrite
 {
-    // Create a FileStream with mode CreateNew  
-    stream = new FileStream(fileName, FileMode.OpenOrCreate);
-    // Create a StreamWriter from FileStream  
-    using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
+    class Program
     {
-        writer.WriteLine("C# Corner Authors");
-        writer.WriteLine("==================");
-        writer.WriteLine("Monica Rathbun");
-        writer.WriteLine("Vidya Agarwal");
-        writer.WriteLine("Mahesh Chand");
-        writer.WriteLine("Vijay Anand");
-        writer.WriteLine("Jignesh Trivedi");
+        static void Main(string[] args)
+        {
+            // Get the directories currently on the C drive.
+            DirectoryInfo[] cDirs = new DirectoryInfo(@"c:\").GetDirectories();
+
+            // Write each directory name to a file.
+            using (StreamWriter sw = new StreamWriter("CDriveDirs.txt"))
+            {
+                foreach (DirectoryInfo dir in cDirs)
+                {
+                    sw.WriteLine(dir.Name);
+                }
+            }
+
+            // Read and show each line from the file.
+            string line = "";
+            using (StreamReader sr = new StreamReader("CDriveDirs.txt"))
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+        }
     }
 }
-finally
-{
-    if (stream != null)
-        stream.Dispose();
-}
-// Read a file  
-string readText = File.ReadAllText(fileName);
-Console.WriteLine(readText);
-Console.ReadKey();
