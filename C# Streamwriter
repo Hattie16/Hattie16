@@ -1,0 +1,32 @@
+//C# Streamwriter
+
+// File name  
+using System.Text;
+
+string fileName = @"C:\Temp\CSharpAuthors.txt";
+FileStream stream = null;
+try
+{
+    // Create a FileStream with mode CreateNew  
+    stream = new FileStream(fileName, FileMode.OpenOrCreate);
+    // Create a StreamWriter from FileStream  
+    using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
+    {
+        writer.WriteLine("C# Corner Authors");
+        writer.WriteLine("==================");
+        writer.WriteLine("Monica Rathbun");
+        writer.WriteLine("Vidya Agarwal");
+        writer.WriteLine("Mahesh Chand");
+        writer.WriteLine("Vijay Anand");
+        writer.WriteLine("Jignesh Trivedi");
+    }
+}
+finally
+{
+    if (stream != null)
+        stream.Dispose();
+}
+// Read a file  
+string readText = File.ReadAllText(fileName);
+Console.WriteLine(readText);
+Console.ReadKey();
