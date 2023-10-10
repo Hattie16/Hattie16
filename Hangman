@@ -1,4 +1,4 @@
-string[] words = { "programming", "hangman", "csharp", "developer", "fun", "college", "coding", "executioner", "innocent", "abyss", "fizz", "motan", "dray", "pegasus", "pegasi" };
+string[] words = { "programming", "hangman", "csharp", "developer", "fun", "college", "coding", "executioner", "innocent", "abyss", "fizz", "motan", "dray", "pegasus", "pegasi", "myth", "jinx" };
 Random random = new Random();
 string wordToGuess = words[random.Next(words.Length)];
 int attemptsRemaining = 10;
