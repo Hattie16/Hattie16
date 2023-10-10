@@ -1,0 +1,71 @@
+Console.WindowHeight = 20;
+Console.WindowWidth = 30;
+int screenwidth = Console.WindowWidth;
+int screenheight = Console.WindowHeight;
+int playfield = screenwidth - 1;
+int lives = 5;
+int score = 0;
+int birdPosY = screenheight / 2;
+int birdSpeed = 1;
+bool isGameOver = false;
+
+while (true)
+{
+    if (Console.KeyAvailable)
+    {
+        ConsoleKeyInfo key = Console.ReadKey(true);
+        if (key.Key == ConsoleKey.Spacebar)
+        {
+            if (birdPosY > 0)
+            {
+                birdPosY -= 2;
+            }
+        }
+    }
+
+    Console.Clear();
+
+    if (birdPosY < screenheight - 1)
+    {
+        birdPosY += birdSpeed;
+    }
+
+    Console.SetCursorPosition(playfield / 2, birdPosY);
+    Console.WriteLine("V");
+
+    // Display obstacles (simple pipes)
+    int obstaclePosition = playfield - 1;
+    Random random = new Random();
+
+    if (obstaclePosition < 0)
+    {
+        obstaclePosition = screenwidth - 1;
+        score++;
+    }
+
+    Console.SetCursorPosition(obstaclePosition, screenheight - 4);
+    Console.WriteLine("====");
+    Console.SetCursorPosition(obstaclePosition, 0);
+    Console.WriteLine("====");
+
+    if (birdPosY == screenheight - 3 && obstaclePosition > playfield / 2 - 1 && obstaclePosition < playfield / 2 + 1)
+    {
+        lives--;
+        if (lives == 0)
+        {
+            isGameOver = true;
+        }
+    }
+
+    Console.SetCursorPosition(0, 0);
+    Console.WriteLine($"Score: {score} Lives: {lives}");
+
+    if (isGameOver)
+    {
+        Console.Clear();
+        Console.WriteLine("Game Over!");
+        break;
+    }
+
+    Thread.Sleep(5);
+}
