@@ -38,14 +38,14 @@ Console.ReadLine();
     // Question 3
     Console.WriteLine("\nQuestion 3: Who wrote Dracula? ");
     string answer3 = Console.ReadLine();
-    if (answer3.ToLower()== "mary shelley")
+    if (answer3.ToLower()== "bram stoker")
     {
         Console.WriteLine("Correct!");
         score++;
     }
     else
     {
-        Console.WriteLine("Incorrect, the correct answer is Mary Shelley.");
+        Console.WriteLine("Incorrect, the correct answer is Bram Stoker.");
     }
 
     // Question 4
