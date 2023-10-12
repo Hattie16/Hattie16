@@ -1,0 +1,40 @@
+namespace ValidationTechniques
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string Fname;
+            string Sname;
+            string AgeString;
+            int AgeInt = 0;
+            Console.WriteLine("Input your first name: ");
+            Fname = Console.ReadLine();
+            Console.WriteLine("Hello "+ Fname);
+            Boolean validate;
+            do
+            {
+                validate = false;
+                Console.WriteLine("Input your last name: ");
+                Sname = Console.ReadLine();
+                Console.WriteLine("Input your age: ");
+                AgeString = Console.ReadLine();
+                if (string.IsNullOrEmpty(Sname))
+                {
+                    Console.WriteLine("You must enter a last name");
+                }
+                if (int.TryParse(AgeString, out AgeInt))
+                {
+                    Console.WriteLine("Your age is "+AgeInt);
+                }
+                else
+                {
+                    Console.WriteLine("You must enter a whole number for your age");
+                    validate = true;
+                }
+            } while (validate==true);
+            Console.WriteLine(Fname + " " +  Sname + " I confirm you are " + AgeInt);
+            Console.ReadLine();
+        }
+    }
+}
