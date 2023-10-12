@@ -1,0 +1,49 @@
+string Runagain;
+Runagain = "YES";
+while (Runagain == "YES")
+{
+    Random rAndom = new Random();
+    int seCretNumber = rAndom.Next(1, 101); // Generate a random number between 1 and 100
+    int maxTries = 10; // Number of tries they have
+
+    Console.WriteLine("Welcome to the Number Guessing Game!");
+    Console.WriteLine($"You have {maxTries} tries to guess the number between 1 and 100.");
+
+    for (int tries = 1; tries <= maxTries; tries++)
+    {
+        Console.Write($"Attempt {tries}: Enter your guess: ");
+        if (int.TryParse(Console.ReadLine(), out int userGuess))
+        {
+            if (userGuess < seCretNumber)
+            {
+                Console.WriteLine("Too low! Try again.");
+            }
+            else if (userGuess > seCretNumber)
+            {
+                Console.WriteLine("Too high! Try again.");
+            }
+            else
+            {
+                Console.WriteLine($"Congratulations! You guessed the number correctly in {tries} attempts! It was {seCretNumber}! Well done!");
+                Console.WriteLine("Input YES if you want the program to keep running");
+                Runagain = Console.ReadLine();
+                Runagain = Runagain.ToUpper();
+            }
+        }
+        if (userGuess == 0)
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+
+        }
+        if (tries == maxTries)
+        {
+            Console.WriteLine($"Sorry you have run out of tries, the number was {seCretNumber}.");
+            Console.WriteLine("Input YES if you want the program to keep running");
+            Runagain = Console.ReadLine();
+            Runagain = Runagain.ToUpper();
+
+        }
+
+    }
+   
+}
