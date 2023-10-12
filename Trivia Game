@@ -73,9 +73,20 @@ Console.ReadLine();
     {
         Console.WriteLine("Incorrect, the answer is six.");
     }
+    //Question 6
+    Console.WriteLine("\nQuestion 6: Who discovered Penicillin?");
+    string answer6 = Console.ReadLine();
+    if (answer6.ToLower() == "alexander flemming")
+    {
+        Console.WriteLine("Correct");
+        score++;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect the answer is alexander flemming");
+    }
 
-
-    Console.WriteLine($"\nYour score is: {score} out of 5"); 
+    Console.WriteLine($"\nYour score is: {score} out of 6"); 
 
     Console.WriteLine("\nThank you for playing the Word Trivia Game!");
 }
