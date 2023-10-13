@@ -1,0 +1,43 @@
+class MultiplicationGame
+{
+    static void Main(string[] args)
+    {
+        Random random = new Random();
+        bool playAgain = true;
+
+        while (playAgain)
+        {
+            int score = 0;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                int num1 = random.Next(1, 11);
+                int num2 = random.Next(1, 11);
+                int correctAnswer = num1 * num2;
+
+                Console.Write($"Question {i}: {num1} x {num2} = ");
+                int userAnswer = int.Parse(Console.ReadLine());
+
+                if (userAnswer == correctAnswer)
+                {
+                    Console.WriteLine("Correct! You earned a point.");
+                    score++;
+                }
+                else
+                {
+                    Console.WriteLine($"Incorrect. The correct answer is {correctAnswer}.");
+                }
+            }
+
+            Console.WriteLine($"Game over! Your score: {score} out of 10.");
+            Console.Write("Do you want to play again? (yes/no): ");
+            string playAgainResponse = Console.ReadLine().ToLower();
+
+            if (playAgainResponse != "yes")
+            {
+                playAgain = false;
+                Console.WriteLine("Thank you for playing!");
+            }
+        }
+    }
+}
