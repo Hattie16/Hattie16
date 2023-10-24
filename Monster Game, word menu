@@ -1,0 +1,89 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Random random = new Random();
+        int playerHealth = 100;
+        int monsterhealth = 100;
+        bool playerAlive = true;
+        bool monsterAlive = true;
+        string choice;
+        string weapon;
+
+
+        Console.WriteLine("Welcome to the text based monster attack game");
+        Console.WriteLine("You are facing a monster, you have three choices: attack, defend, and run.");
+        Console.WriteLine("Good luck!");
+
+        while (playerAlive && monsterAlive)
+        {
+            Console.WriteLine("Please decide what you would like to do");
+            choice = Console.ReadLine(); //the user chooses what they would like to do
+            switch (choice)
+            {
+                case "attack":
+                    Console.WriteLine("What would you like to attack with? A sword, or, a club");
+                    weapon = Console.ReadLine();
+                    if (weapon == "sword") //most damage
+                    {
+                        int DamageToMonster = random.Next(20,30);
+                        int DamageToPlayer = random.Next(1,9);
+                        monsterhealth -= DamageToMonster;
+                        playerHealth -= DamageToPlayer;
+                        Console.WriteLine($"You have dealt {DamageToMonster} to the monster.");
+                        Console.WriteLine($"The monster dealt back {DamageToPlayer}.");
+                    }
+                    else if (weapon == "club") //less damage than a sword
+                    {
+                        int damageToMonster = random.Next(10,21);
+                        int damageToPlayer = random.Next(5, 15);
+                        monsterhealth -= damageToMonster;
+                        playerHealth -= damageToPlayer;
+                        Console.WriteLine($"You have dealt {damageToMonster} to the monster.");
+                        Console.WriteLine($"The monster has dealt back {damageToPlayer}");
+                    }
+                    break;
+                case "defend":
+                    int monsterDamage = random.Next(5, 11);
+                    playerHealth -= monsterDamage;
+                    Console.WriteLine("You have defended yourself, but the monster has still managed to attack.");
+                    Console.WriteLine($"You received {monsterDamage} damage.");
+                    break;
+                case "run":
+                    Console.WriteLine("You have chosen to attempt to run away from the monster. Good Luck!");
+                    int runChance = random.Next(1, 4); //25% chance the attempt will succeed
+                    if (runChance == 1)
+                    {
+                        Console.WriteLine("You have successfully escaped from the monster. Well Done!");
+                        monsterAlive = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your attempt to escape has failed. The monster attacks you.");
+                        int escapeDamage = random.Next(10, 16);
+                        playerHealth -= escapeDamage;
+                        Console.WriteLine($"You have received {escapeDamage} damage.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+
+            }
+            if (monsterhealth <= 0)
+            {
+                monsterAlive = false;
+                Console.WriteLine("You have defeated the monster!");
+            }
+            else if (playerHealth <= 0)
+            {
+                playerAlive = false;
+                Console.WriteLine("You have been defeated by the monster.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input.");
+            }
+        }
+    }
+}
