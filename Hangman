@@ -12,7 +12,7 @@ for (int i = 0; i < guessedLetters.Length; i++)
 }
 
 Console.WriteLine("Welcome to Hangman!");
-
+Console.WriteLine($"There are {words.Length} words to have been chosen from. Good luck!");
 while (!gameOver)
 {
     Console.WriteLine($"Word to guess: {string.Join(" ", guessedLetters)}");
