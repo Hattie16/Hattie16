@@ -1,0 +1,78 @@
+Random random = new Random();
+int playerHealth = 100;
+int monsterHealth = 50;
+bool playerAlive = true;
+bool monsterAlive = true;
+
+Console.WriteLine("Welcome to the Monster Encounter game!");
+Console.WriteLine("You are facing a fearsome monster. What will you do?");
+
+while (playerAlive && monsterAlive)
+{
+    Console.WriteLine("\nOptions:");
+    Console.WriteLine("1. Attack");
+    Console.WriteLine("2. Defend");
+    Console.WriteLine("3. Run");
+
+    string userInput = Console.ReadLine();
+
+    if (int.TryParse(userInput, out int userChoice))
+    {
+        switch (userChoice)
+        {
+            case 1:
+                int damageToMonster = random.Next(10, 21);
+                int damageToPlayer = random.Next(5, 11);
+
+                monsterHealth -= damageToMonster;
+                playerHealth -= damageToPlayer;
+
+                Console.WriteLine($"You attacked the monster and dealt {damageToMonster} damage.");
+                Console.WriteLine($"The monster attacked back and dealt {damageToPlayer} damage.");
+                break;
+            case 2:
+                int monsterDamage = random.Next(5, 11);
+
+                playerHealth -= monsterDamage;
+
+                Console.WriteLine("You defend yourself, but the monster still managed to attack.");
+                Console.WriteLine($"You received {monsterDamage} damage.");
+                break;
+            case 3:
+                Console.WriteLine("You attempt to run away from the monster.");
+                int runChance = random.Next(1, 4); // 25% chance of failure
+
+                if (runChance == 1)
+                {
+                    Console.WriteLine("You successfully escaped from the monster!");
+                    monsterAlive = false;
+                }
+                else
+                {
+                    Console.WriteLine("Your attempt to run failed, and the monster attacks you.");
+                    int escapeDamage = random.Next(10, 16);
+                    playerHealth -= escapeDamage;
+                    Console.WriteLine($"You received {escapeDamage} damage.");
+                }
+                break;
+            default:
+                Console.WriteLine("Invalid choice. Please select 1, 2, or 3.");
+                break;
+        }
+
+        if (monsterHealth <= 0)
+        {
+            monsterAlive = false;
+            Console.WriteLine("You have defeated the monster!");
+        }
+        else if (playerHealth <= 0)
+        {
+            playerAlive = false;
+            Console.WriteLine("You have been defeated by the monster.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Invalid input. Please enter a valid choice.");
+    }
+}
