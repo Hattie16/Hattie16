@@ -1,0 +1,42 @@
+string[] choices = { "rock", "paper", "scissors" };
+Random random = new Random();
+
+while (true)
+{
+    Console.Write("Enter your choice (rock, paper, scissors): ");
+    string playerChoice = Console.ReadLine().ToLower();
+
+    if (Array.IndexOf(choices, playerChoice) == -1)
+    {
+        Console.WriteLine("Invalid choice. Please choose rock, paper, or scissors.");
+        continue;
+    }
+
+    int computerChoiceIndex = random.Next(choices.Length);
+    string computerChoice = choices[computerChoiceIndex];
+
+    Console.WriteLine($"Computer chose {computerChoice}");
+
+    if (playerChoice == computerChoice)
+    {
+        Console.WriteLine("It's a tie!");
+    }
+    else if ((playerChoice == "rock" && computerChoice == "scissors") ||
+             (playerChoice == "scissors" && computerChoice == "paper") ||
+             (playerChoice == "paper" && computerChoice == "rock"))
+    {
+        Console.WriteLine("You win!");
+    }
+    else
+    {
+        Console.WriteLine("Computer wins!");
+    }
+
+    Console.Write("Play again? (yes/no): ");
+    string playAgain = Console.ReadLine().ToLower();
+
+    if (playAgain != "yes")
+    {
+        break;
+    }
+}
