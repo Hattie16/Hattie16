@@ -1,0 +1,70 @@
+class HangmanGame
+{
+    static void Main()
+    {
+        bool playAgain = true;
+        while (playAgain)
+        {
+            Console.Clear();
+            Console.WriteLine("Player 1, enter a word for Player 2 to guess:");
+            string wordToGuess = Console.ReadLine().ToLower();
+
+            char[] wordArray = wordToGuess.ToCharArray();
+            char[] guessedWord = new char[wordToGuess.Length];
+            for (int i = 0; i < wordToGuess.Length; i++)
+            {
+                if (wordArray[i] == ' ')
+                {
+                    guessedWord[i] = ' ';
+                }
+                else
+                {
+                    guessedWord[i] = '_';
+                }
+            }
+
+            int attempts = 6;
+
+            while (attempts > 0)
+            {
+                Console.Clear();
+                Console.WriteLine($"Word to guess: {new string(guessedWord)}");
+                Console.WriteLine($"Attempts left: {attempts}");
+
+                Console.WriteLine("Player 2, enter a letter or the full word guess:");
+                string guess = Console.ReadLine().ToLower();
+
+                if (guess == wordToGuess)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"Congratulations! Player 2 guessed the word: {wordToGuess}");
+                    break;
+                }
+                else if (guess.Length == 1 && wordToGuess.Contains(guess))
+                {
+                    for (int i = 0; i < wordToGuess.Length; i++)
+                    {
+                        if (wordArray[i] == guess[0])
+                        {
+                            guessedWord[i] = guess[0];
+                        }
+                    }
+                }
+                else
+                {
+                    attempts--;
+                }
+            }
+
+            if (attempts == 0)
+            {
+                Console.Clear();
+                Console.WriteLine($"Player 2 ran out of attempts. The word was: {wordToGuess}");
+            }
+
+            Console.WriteLine("Do you want to play again? (yes/no)");
+            string playAgainInput = Console.ReadLine().ToLower();
+            playAgain = (playAgainInput == "yes");
+        }
+    }
+}
